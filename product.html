@@ -60,35 +60,35 @@
                 <h1>Hibiscus Rose</h1>
                 <p>$20</p>
             </div>
-            <div class="text-center">
+            <div class="productbox" class="text-center">
                 <img class="inline transform hover:-translate-y-2 hover:shadow-xl  transition"
                     src="img/pot 04.svg">
                 <h1>New pet plant</h1>
                 <p>$20</p>
             </div>
 
-            <div class="text-center">
+            <div  class="productbox" class="text-center">
                 <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition"
                     src="img/pot 05.svg">
                 <h1>Grey Plant</h1>
                 <p>$20</p>
             </div>
 
-            <div class="text-center">
+            <div class="productbox" class="text-center">
                 <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition"
                     src="img/pot 06.svg">
                 <h1>Personanlized Plant</h1>
                 <p>$20</p>
             </div>
 
-            <div class="text-center">
+            <div  class="productbox" class="text-center">
                 <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition"
                     src="img/pot 07.svg">
                 <h1>Orchid plants</h1>
                 <p>$20</p>
             </div>
 
-            <div class="text-center">
+            <div  class="productbox" class="text-center">
                 <img class="inline transform hover:-translate-y-2 hover:shadow-xl  transition"
                     src="img/pot 08.svg">
                 <h1>Bonsai plants</h1>
@@ -107,6 +107,33 @@
         <p>The Standard chunk of Lorem ipsum used since the 1500s is reprodused below for those interest</p>
         <p>@ 2026 Greenden.com</p>
     </section>
-    
+      <script>
+    var sidenav = document.getElementById("sidenav")
+    var menuicon = document.getElementById("menuicon")
+    var closenav = document.getElementById("closenav")
+    menuicon.addEventListener("click",function(){
+        sidenav.style.right=0
+    })
+    closenav.addEventListener("click",function(){
+        sidenav.style.right="-50"
+    })
+var productcontainer = document.getElementById("product-container")
+var search = document.getElementById("search")
+var Productlist = productcontainer.querySelectorAll(".productbox")
+search.addEventListener("keyup" , function(){
+    var enteredvalue = event.target.value.toUpperCase()
+    for(count=0;count<Productlist.length;count=count+1){
+        var productname = Productlist[count].querySelector("h1").textContent;
+        if (productname.toUpperCase().indexOf(enteredvalue) < 0) {
+    Productlist[count].style.display = "none";
+}
+        else{
+            Productlist[count].style.display="block"
+        }
+    }
+})
+
+
+  </script> 
 </body>
 </html>
